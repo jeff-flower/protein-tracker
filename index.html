@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Protein Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Protein tracker</h1>
+    <form>
+      <fieldset>
+        <legend>Protein consumed</legend>
+        <p>
+          <label for="protein-date">Date <span aria-label="required">*</span></label>
+          <input type="date" id="protein-date" required />
+        </p>
+        <p>
+          <label for="protein-name">Protein <span aria-label="required">*</span></label>
+          <input type="text" id="protein-name" required />
+        </p>
+        <p>
+          <label for="protein-amount">Amount (grams) <span aria-label="required">*</span></label>
+          <input type="number" id="protein-amount" required />
+        </p>
+      </fieldset>
+      <p>
+        <button type="submit">Add protein</button>
+      </p>
+    </form>
+    <section id="past-protein">
+      <h2>Recent entries</h2>
+      <ul>
+        <li>1/1/2025 Ground Beef 35g</li>
+        <li>1/1/2025 Eggs 18g</li>
+      </ul>
+    </section>
+    <script src="app.js" defer></script>
+  </body>
+</html>
