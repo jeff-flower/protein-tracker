@@ -1,3 +1,3 @@
 #!/bin/bash
 
-npx http-server ./ -o -p 8080
+npx http-server ./ -p 8080"
