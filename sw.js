@@ -8,6 +8,9 @@ const APP_STATIC_RESOURCES = [
     `${BASE_URL}/style.css`,
     `${BASE_URL}/app.js`,
     `${BASE_URL}/proteintracker.json`,
+    `${BASE_URL}/icons/favicon.ico`,
+    `${BASE_URL}/icons/android-chrome-192x192.png`,
+    `${BASE_URL}/icons/android-chrome-512x512.png`,
 ];
 
 self.addEventListener("install", (e) => {
@@ -46,7 +49,7 @@ self.addEventListener("fetch", (e) => {
   if (e.request.mode === "navigate") {
     // Return to the index page
     console.log("Fetch event: get index page from cache");
-    e.respondWith(caches.match("/"));
+    e.respondWith(caches.match("/protein-tracker/"));
     return;
   }
 
@@ -61,7 +64,7 @@ self.addEventListener("fetch", (e) => {
       }
 
       // Respond with 404 if nothing found in cache
-      console.log("Fetch event: couldn't find resource");
+      console.log(`Fetch event: couldn't find resource ${e.request.url}`);
       return new Response(null, {statue: 404});
     })()
   );
